@@ -7,6 +7,7 @@ import iPhoneBlack from './assets/iPhoneBlack.webp'
 import Description from './components/JSX/Description'
 import Foothold from './components/JSX/Foothold'
 import { useState, useEffect } from 'react'
+import PriceInfo from './components/JSX/PriceInfo'
 
 const images = [
   iPhoneBlack,
@@ -25,16 +26,25 @@ function App() {
         setShowPriceInfo(prev => !prev);
         setVisible(true);
       }, 1500);
-    }, 4500);
+    }, 10000);
     return () => clearInterval(loop);
   }, []);
 
   return (
     <div>
-      <Header Logo = {logo}/>
-      <Description/>
-      <Carousel  images = {images}/>
-      <Foothold/>
+      <Header Logo={logo} />
+      
+      <div className={`fade-container ${!visible ? 'fade-out' : ''}`}>
+        {showPriceInfo ? (
+          <>
+            <Description />
+            <Carousel images={images} />
+            <Foothold />
+          </>
+        ) : (
+          <PriceInfo />
+        )}
+      </div>
     </div>
   )
 }

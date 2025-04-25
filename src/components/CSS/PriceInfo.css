@@ -1,3 +1,119 @@
-body {
-    background-color: black;
+.title-box {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-exchange{
+    height: 100%;
+    width: 70%;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #6b2292;
+}
+
+.prices-by-dolar {
+    height: 50vh;
+    width: 100%;
+    position: relative;
+}
+
+.USD-icon {
+    height: 50vh;
+    width: 33%;
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flag-us {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    margin-left: 20%;
+}
+
+.coin-symbol-box {
+    height: 50vh;
+    width: 33%;
+    position: absolute;
+    left: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.coin-symbol {
+    font-size: 40px;
+    color: white;
+    margin-top: -10%;
+}
+
+.price-tag-info {
+    background-color: #6b2292;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 22px;
+    white-space: nowrap;
+    margin-top: -30%;
+    margin-left: 20%;
+}
+
+.price-tag-other {
+    background-color: #6b2292;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 22px;
+    white-space: nowrap;
+    margin-top: -30%;
+    margin-right: 20%;
+}
+
+.other-flags{
+    height: 50vh;
+    width: 34%;
+    position: absolute;
+    left: 66%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flag-icon-info {
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    margin-right: 20%;
+}
+
+.social-media{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media span {
+    font-size: 30px;
 }

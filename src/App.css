@@ -14,3 +14,13 @@ body {
   color: #fff;
   background: linear-gradient(to bottom, #6b2ca4 0%, #4C217B 100%);
 }
+
+.fade-container {
+  transition: opacity 1.5s ease;
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
