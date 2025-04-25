@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Gotham', sans-serif;
+  color: #fff;
+  background: linear-gradient(to bottom, #6b2ca4 0%, #4C217B 100%);
+}
