@@ -1,5 +1,12 @@
-.description-box{
-    border: 2px solid #fff;
+.description-box {
     width: 100%;
-    height: 240px;
+    height: 340px;
+    display: flex;
+    justify-content: center;
+}
+
+.line-description {
+    width: 80%;
+    border: 2px solid #fff;
+    height: 0;
 }

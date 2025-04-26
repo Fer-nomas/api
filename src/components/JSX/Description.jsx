@@ -1,9 +1,13 @@
-import '../CSS/Description.css'
+import '../CSS/Foothold.css'
 
-const Description = () => {
+const Foothold = ({productIName}) => {
     return (
-        <div className='description-box'/>
+        <div>
+            <div className='description-box'>
+                <div className='message-description'><span>{productIName}</span></div>
+            </div>
+        </div>
     )
 }
 
-export default Description
+export default Foothold

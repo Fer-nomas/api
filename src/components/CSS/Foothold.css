@@ -1,5 +1,21 @@
-.message-iva {
-    border: 2px solid #fff;
+.message-iva-box{
     height: 250px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-iva {
+    height: 30%;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    background-color: #642886;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 30px;
 }

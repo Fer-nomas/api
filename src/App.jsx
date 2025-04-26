@@ -88,7 +88,7 @@ function App() {
   const productIName = products.map(product => product.nombre);
   const productImages = products.map(product => product.foto);
   const productPrices = products.map(product => product.precios); // Ahora extraemos el objeto precios completo
-
+  const productCod = products.map(product => product.codigo);
   useEffect(() => {
     const loop = setInterval(() => {
       setVisible(false)
@@ -100,6 +100,8 @@ function App() {
 
     return () => clearInterval(loop)
   }, [])
+  
+  
 
   if (loading && !timeData && !rateData) {
     return (
@@ -123,7 +125,7 @@ function App() {
   }
 
   return (
-    <div>
+    <main>
       <Header
         Logo={logo}
         timeData={timeData}
@@ -134,11 +136,15 @@ function App() {
       <div className={`fade-container ${!visible ? 'fade-out' : ''}`}>
         {showPriceInfo ? (
           <>
-            <Description />
+            <Foothold 
+              productIName={productIName}
+              cod={productCod}
+             />
             <Carousel
               images={productImages}
               names={productIName}
-              prices={productPrices} // Pasamos el objeto de precios completo
+              prices={productPrices}
+              cod={productCod}
             />
             <Foothold />
           </>
@@ -150,7 +156,7 @@ function App() {
           />
         )}
       </div>
-    </div>
+    </main>
   )
 }
 

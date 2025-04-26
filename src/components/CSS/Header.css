@@ -17,7 +17,7 @@ header {
 
 .image-logo {
     width: 100%;
-    max-width: 650px; 
+    max-width: 600px; 
     height: auto;
     object-fit: contain;
 }
@@ -35,7 +35,115 @@ header {
     width: 350px;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
-    background-color: #6b2292;
+    background-color: #6a2476;
     margin-top: -10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
+.header-data-title {
+    border: 2px solid white;
+    width: 100%;
+    height: 30px;
+    margin-top: 0;
+    position: absolute;
+}
+
+.exchange-info {
+    height: 15%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin-top: 2%;
+    text-decoration: underline;
+}
+
+.coin-price {
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    top: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flag-br-header {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #fff;
+    margin-top: -5%;
+    margin-left: -7%;
+}
+
+.br-symbol {
+    position: absolute;
+    margin-top: -34%;
+    margin-left: 14%;
+    font-size: 30px;
+}
+
+.price-br {
+    font-size: 90px;
+}
+
+.line-above {
+    width: 80%;
+    border: 1px solid #fff;
+    margin-top: 15%;
+}
+
+.time-info {
+    height: 10%;
+    width: 80%;
+    position: absolute;
+    top: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.line-below {
+    width: 80%;
+    border: 1px solid #fff;
+    position: absolute;
+    margin-top: 45%;
+}
+
+.flag-br-header-time {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #fff;
+}
+
+.current-time-br {
+    font-size: 25px;
+}
+
+.date-info {
+    height: 20%;
+    width: 100%;
+    position: absolute;
+    top: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.date-info-text {
+    font-size: 40px;
+}

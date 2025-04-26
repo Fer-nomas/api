@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../CSS/Carousel.css'
 import Flag from 'react-world-flags';
 
-const Carousel = ({ images, names, prices }) => {
+const Carousel = ({ images, names, prices, cod }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
@@ -24,65 +24,44 @@ const Carousel = ({ images, names, prices }) => {
 
     return (
         <div className='wrapper'>
-            <div></div>
             <div className='carousel-box'>
-                {images.map((img, index) =>
-                    <>
-                        <h2 className={`carousel-images ${index === currentIndex ? 'active' : ''}`}>
-                            {names[index]}
-                        </h2>
-                        <img
-                            key={index}
-                            src={img}
-                            alt='Images'
-                            className={`carousel-images ${index === currentIndex ? 'active' : ''}`}
-                        />
-                        {/* Precios dinámicos debajo de la imagen */}
-                        <div className={`product-prices ${index === currentIndex ? 'active' : ''}`}>
-                            {prices && prices[index] && (
-                                <div className="dynamic-prices">
-                                    <div className="price-item">
-
-                                        <span>R$ {formatNumber(prices[index].brl)}</span>
-                                    </div>
-                                    <div className="price-item">
-
-                                        <span>U$ {formatNumber(prices[index].usd)}</span>
-                                    </div>
-                                    <div className="price-item">
-
-                                        <span>₲ {formatNumber(prices[index].pyg)}</span>
-                                    </div>
-                                    <div className="price-item">
-
-                                        <span>$ {formatNumber(prices[index].ars)}</span>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    </>
+            {images.map((img, index) =>
+                <>
+                    <div className={`product-info ${index === currentIndex ? 'active' : ''}`}>
+                        {names[index]}
+                        {cod[index]}
+                    </div>  
+                    <img
+                        key={index}
+                        src={img}
+                        alt='Images'
+                        className={`carousel-images ${index === currentIndex ? 'active' : ''}`}
+                    />
+                    <div className={`product-prices ${index === currentIndex ? 'active' : ''}`}>
+                    </div>
+                </>
                 )}
             </div>
-            {/* Mantener la parte de cotización del día sin modificar */}
+
             <div className="price">
                 <div className="price-row destaque">
                     <Flag code="BR" id='flag-br' />
-                    <span id="price-tag">R$ 7.358,40</span>
+                    <span id="price-tag">R$ {formatNumber(prices[currentIndex]?.brl || 0, 'BR')}</span>
                 </div>
 
                 <div className="price-row">
                     <Flag code="US" className="flag-icon" />
-                    <span className="price-tag">U$ 1.260.00</span>
+                    <span className="price-tag">U$ {formatNumber(prices[currentIndex]?.usd || 0, 'US')}</span>
                 </div>
 
                 <div className="price-row">
                     <Flag code="PY" className="flag-icon" />
-                    <span className="price-tag">U$ 1.260.00</span>
+                    <span className="price-tag">₲ {formatNumber(prices[currentIndex]?.pyg || 0, 'PY')}</span>
                 </div>
 
                 <div className="price-row">
                     <Flag code="AR" className="flag-icon" />
-                    <span className="price-tag">U$ 1.260.00</span>
+                    <span className="price-tag">$ {formatNumber(prices[currentIndex]?.ars || 0, 'AR')}</span>
                 </div>
             </div>
         </div>
