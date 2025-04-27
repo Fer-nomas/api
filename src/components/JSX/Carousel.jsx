@@ -23,7 +23,7 @@ const Carousel = ({ images, names, prices, cod, currentIndex, setCurrentIndex })
 
         // Then immediately trigger fade-in
         setFade(true);
-      }, 500); // Match this to your CSS transition time
+      }, 1000); // Match this to your CSS transition time
     }, 10000); // Change image every 10 seconds
 
     return () => clearInterval(interval);
