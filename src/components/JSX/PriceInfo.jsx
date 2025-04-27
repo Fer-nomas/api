@@ -6,29 +6,8 @@ import py from '../../assets/flags/py.svg'
 import us from '../../assets/flags/us.svg'
 import ar from '../../assets/flags/ar.svg'
 
-const PriceInfo = () => {
-  const [exchangeRates, setExchangeRates] = useState({
-    moeda2: null,
-    moeda3: null,
-    moeda4: null,
-  })
+const PriceInfo = ({ exchangeRates }) => {
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/api/admin/cambio-externo')
-        const data = await response.json()
-        setExchangeRates({
-          moeda2: data.moeda2,
-          moeda3: data.moeda3,
-          moeda4: data.moeda4,
-        })
-      } catch (err) {
-        console.error('Error fetching exchange rates:', err)
-      }
-    }
-    fetchData()
-  }, [])
 
   return (
     <>

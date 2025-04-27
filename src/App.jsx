@@ -17,7 +17,11 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showPriceInfo, setShowPriceInfo] = useState(false);
   const [visible, setVisible] = useState(true);
-
+  const [exchangeRates, setExchangeRates] = useState({
+    moeda2: null,
+    moeda3: null,
+    moeda4: null,
+  })
   const apiTime = '/api/admin/cotizaciones/tiempo';
   const apiCoto = '/api/admin/cambio-externo';
 
@@ -36,13 +40,22 @@ function App() {
         const rateResult = await rateResponse.json();
         setRateData(rateResult);
 
-        const response = await fetch('/api/admin/novidades');
-        const data = await response.json();
+        const monResponse = await fetch('/api/admin/cambio-externo')
+        const monData = await monResponse.json()
+        setExchangeRates({
+          moeda2: monData.moeda2,
+          moeda3: monData.moeda3,
+          moeda4: monData.moeda4,
+        })
+
+        const novResponse = await fetch('/api/admin/novidades');
+        const data = await novResponse.json();
         if (data.length > 0) {
           const shuffledData = shuffleArray(data);
           setProducts(shuffledData);
           setCurrentIndex(0);
         }
+
 
         setLoading(false);
       } catch (err) {
@@ -132,9 +145,8 @@ function App() {
           </>
         ) : (
           <PriceInfo
-            timeData={timeData}
-            rateData={rateData}
-            currentTime={currentTime}
+
+            exchangeRates={exchangeRates}
           />
         )}
       </div>
