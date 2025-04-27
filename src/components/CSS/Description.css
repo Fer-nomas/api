@@ -1,0 +1,37 @@
+
+  .description-box {
+    height: 270px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .message-description {
+    height: 100%;
+    width: 80%;
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #642886; */
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 40px;
+    font-family: 'Gotham', sans-serif;
+    text-align: center; 
+  }
+  
+  .line-above-description {
+    height: 2px;
+    width: 80%;
+    background-color: #fff;
+  }
+  
+  
+  .name-animation {
+    transition: opacity 0.5s ease-out;
+  }
+  
